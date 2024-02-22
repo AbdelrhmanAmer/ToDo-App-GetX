@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app_getx/routes.dart';
+import 'package:todo_app_getx/screens/notification/notification_screen.dart';
 import 'themes.dart';
 
 void main() {
@@ -14,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: theme(),
-      home: const HomeScreen(),
+      initialRoute: NotificationScreen.routeName,
+      routes: routes,
     );
   }
 
