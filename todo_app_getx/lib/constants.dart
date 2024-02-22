@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-const Color kTextColor = Colors.black54;
+const Color kTextColor = Colors.black87;
