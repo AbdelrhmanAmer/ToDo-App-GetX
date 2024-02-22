@@ -12,7 +12,7 @@ class NotificationScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Notifications'),
         leading: IconButton(
-            onPressed: (){}, icon: const Icon(Icons.arrow_back)),
+            onPressed: () => Get.back(), icon: const Icon(Icons.arrow_back)),
       ),
       body: Container(),
     ));
