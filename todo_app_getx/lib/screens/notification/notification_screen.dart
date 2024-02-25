@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'components/body.dart';
+
 class NotificationScreen extends StatelessWidget {
   static String routeName = '/notification';
   const NotificationScreen({super.key});
@@ -13,11 +15,11 @@ class NotificationScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text(arguments.pyload.split('|')[0]),
+        title: Text(arguments.pyload.split('|')[0], style: Theme.of(context).textTheme.titleLarge,),
         leading: IconButton(
             onPressed: () => Get.back(), icon: const Icon(Icons.arrow_back)),
       ),
-      body: Container(),
+      body: Body(pyload: arguments.pyload),
     ));
   }
 }

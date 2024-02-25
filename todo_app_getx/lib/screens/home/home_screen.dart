@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      title: const Text('Home Screen'),
+      title:  Text('Home Screen', style: Theme.of(context).textTheme.titleLarge),
       actions: [
         IconButton(
           onPressed: () {
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
               context,
               NotificationScreen.routeName,
               arguments: NotificationArguments(
-                  pyload: 'Notification Title |description |date'),
+                  pyload: 'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date'),
             );
           },
           icon: SvgPicture.asset(
