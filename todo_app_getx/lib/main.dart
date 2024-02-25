@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:todo_app_getx/routes.dart';
 
+import 'routes.dart';
+import 'theme_service.dart';
 import 'screens/home/home_screen.dart';
 import 'themes.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: Themes.light,
       darkTheme: Themes.dark,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeServices().theme,
       initialRoute: HomeScreen.routeName,
       routes: routes,
     );
