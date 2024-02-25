@@ -15,7 +15,7 @@ class NotificationScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text(arguments.pyload.split('|')[0], style: Theme.of(context).textTheme.titleLarge,),
+        title: Text(arguments.pyload.split('|')[0], style: Theme.of(context).textTheme.headlineSmall,),
         leading: IconButton(
             onPressed: () => Get.back(), icon: const Icon(Icons.arrow_back)),
       ),

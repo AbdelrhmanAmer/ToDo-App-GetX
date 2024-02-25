@@ -36,14 +36,14 @@ class TextSection extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge!
-                    .copyWith(color: color)),
+                    .copyWith(color: color, fontWeight: FontWeight.bold)),
           ],
         ),
         Text(
           description,
           style: Theme.of(context)
               .textTheme
-              .bodyMedium!
+              .bodySmall!
               .copyWith(color: color),
         ),
       ],

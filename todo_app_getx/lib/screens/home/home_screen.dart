@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      title:  Text('Home Screen', style: Theme.of(context).textTheme.titleLarge),
+      title:  Text('Home Screen', style: Theme.of(context).textTheme.headlineSmall),
       actions: [
         IconButton(
           onPressed: () {
