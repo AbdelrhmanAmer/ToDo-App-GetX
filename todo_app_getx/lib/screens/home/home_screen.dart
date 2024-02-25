@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:todo_app_getx/screens/notification/notification_screen.dart';
+import 'package:todo_app_getx/services/theme_service.dart';
 
 import 'components/body.dart';
 
@@ -10,15 +12,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(context),
-      body: const Body()
-    );
+    return Scaffold(appBar: buildAppBar(context), body: const Body());
   }
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      title:  Text('Home Screen', style: Theme.of(context).textTheme.headlineSmall),
+      title:
+          Text('Home Screen', style: Theme.of(context).textTheme.headlineSmall),
+      leading: IconButton(
+          onPressed: () => ThemeServices().switchTheme(),
+          icon: const Icon(Icons.sunny)),
       actions: [
         IconButton(
           onPressed: () {
@@ -26,13 +29,13 @@ class HomeScreen extends StatelessWidget {
               context,
               NotificationScreen.routeName,
               arguments: NotificationArguments(
-                  pyload: 'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date'),
+                  pyload:
+                      'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date'),
             );
           },
           icon: SvgPicture.asset(
             'assets/icons/Bell.svg',
-            colorFilter:
-                const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+            colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
         )
       ],
