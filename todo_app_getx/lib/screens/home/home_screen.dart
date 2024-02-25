@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:todo_app_getx/screens/notification/notification_screen.dart';
-import 'package:todo_app_getx/services/theme_service.dart';
 
+import '../../services/theme_service.dart';
+import '../notification/notification_screen.dart';
 import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,13 +25,10 @@ class HomeScreen extends StatelessWidget {
       actions: [
         IconButton(
           onPressed: () {
-            Navigator.pushNamed(
-              context,
-              NotificationScreen.routeName,
-              arguments: NotificationArguments(
-                  pyload:
-                      'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date'),
-            );
+            Get.to(const NotificationScreen(
+              pyload:
+                  'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date',
+            ));
           },
           icon: SvgPicture.asset(
             'assets/icons/Bell.svg',
