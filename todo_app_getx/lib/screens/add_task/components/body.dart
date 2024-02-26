@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 import '../../../constants.dart';
 import '../../../controllers/task_controller.dart';
+import 'custom_drop_btn.dart';
 import 'input_field.dart';
 
 class Body extends StatefulWidget {
@@ -87,34 +88,30 @@ class _BodyState extends State<Body> {
             ),
             const SizedBox(height: kDefaultPadding / 2),
             InputField(
-                title: 'Remind',
-                hintText: '$_selectedRemind minutes only',
-                enabled: false,
-                widget: DropdownButton(
-                  dropdownColor: kPrimaryColor,
-                  items: remindList
-                      .map((value) => DropdownMenuItem(
-                            value: value,
-                            child: Text(
-                              '$value',
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                          ))
-                      .toList(),
-                  icon: const Icon(Icons.keyboard_arrow_down),
-                  borderRadius: BorderRadius.circular(14),
-                  iconSize: 32,
-                  elevation: 8,
-                  underline: Container(height: 0),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _selectedRemind = newValue!;
-                    });
-                  },
-                )),
+              title: 'Remind',
+              hintText: '$_selectedRemind minutes only',
+              enabled: false,
+              widget: CustomDropButton(
+                onChanged: (value) =>
+                    setState(() => _selectedRemind = value as int),
+                list: remindList,
+              ),
+            ),
+            const SizedBox(height: kDefaultPadding / 2),
+            InputField(
+              title: 'Repeat',
+              hintText: _selectedRepeat,
+              enabled: false,
+              widget: CustomDropButton(
+                onChanged: (value) =>
+                    setState(() => _selectedRepeat = value as String),
+                list: repeatList,
+              ),
+            ),
           ],
         ),
       ),
     ));
   }
 }
+
