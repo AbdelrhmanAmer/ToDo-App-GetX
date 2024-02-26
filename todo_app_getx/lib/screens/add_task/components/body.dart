@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../../../constants.dart';
 import '../../../controllers/task_controller.dart';
+import 'color_dot.dart';
 import 'custom_drop_btn.dart';
 import 'input_field.dart';
 
@@ -29,6 +32,9 @@ class _BodyState extends State<Body> {
   List<int> remindList = [5, 10, 15, 20];
   int _selectedRemind = 5;
 
+  List<Color> colorList = [Colors.blue, Colors.pink, Colors.orange];
+  int _selectedColorIndex = 0;
+
   List<String> repeatList = ['none', 'Daily', 'Weekly', 'monthly'];
   String _selectedRepeat = 'none';
 
@@ -40,20 +46,21 @@ class _BodyState extends State<Body> {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(height: kDefaultPadding / 3),
             Text('Add Task', style: Theme.of(context).textTheme.headlineSmall),
-            const SizedBox(height: kDefaultPadding / 2),
+            const SizedBox(height: kDefaultPadding / 3),
             InputField(
               title: 'Title',
               hintText: 'Enter title here',
               controller: _titleController,
             ),
-            const SizedBox(height: kDefaultPadding / 2),
+            const SizedBox(height: kDefaultPadding / 3),
             InputField(
               title: 'Note',
               hintText: 'Enter note here',
               controller: _titleController,
             ),
-            const SizedBox(height: kDefaultPadding / 2),
+            const SizedBox(height: kDefaultPadding / 3),
             InputField(
               title: 'Date',
               hintText: DateFormat.yMd().format(_selectedDate),
@@ -62,7 +69,7 @@ class _BodyState extends State<Body> {
                 icon: const Icon(Icons.calendar_today_outlined),
               ),
             ),
-            const SizedBox(height: kDefaultPadding / 2),
+            const SizedBox(height: kDefaultPadding / 3),
             Row(
               children: [
                 Expanded(
@@ -86,7 +93,7 @@ class _BodyState extends State<Body> {
                 ))
               ],
             ),
-            const SizedBox(height: kDefaultPadding / 2),
+            const SizedBox(height: kDefaultPadding / 3),
             InputField(
               title: 'Remind',
               hintText: '$_selectedRemind minutes only',
@@ -97,7 +104,7 @@ class _BodyState extends State<Body> {
                 list: remindList,
               ),
             ),
-            const SizedBox(height: kDefaultPadding / 2),
+            const SizedBox(height: kDefaultPadding / 3),
             InputField(
               title: 'Repeat',
               hintText: _selectedRepeat,
@@ -108,6 +115,35 @@ class _BodyState extends State<Body> {
                 list: repeatList,
               ),
             ),
+            const SizedBox(height: kDefaultPadding / 3),
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Color',
+                        style: Get.theme.textTheme.bodyLarge!
+                            .copyWith(color: Colors.white)),
+                    const SizedBox(height: kDefaultPadding / 4),
+                    Row(
+                      children: List.generate(
+                        3,
+                        (index) => ColorDot(
+                          color: colorList[index],
+                          index: index,
+                          isSelected: _selectedColorIndex == index,
+                          onChanged: (selected) {
+                            setState(() {
+                              _selectedColorIndex = selected;
+                            });
+                          },
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            )
           ],
         ),
       ),
