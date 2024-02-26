@@ -26,7 +26,10 @@ class _BodyState extends State<Body> {
       .toString();
 
   List<int> remindList = [5, 10, 15, 20];
+  int _selectedRemind = 5;
+
   List<String> repeatList = ['none', 'Daily', 'Weekly', 'monthly'];
+  String _selectedRepeat = 'none';
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,7 @@ class _BodyState extends State<Body> {
             InputField(
               title: 'Date',
               hintText: DateFormat.yMd().format(_selectedDate),
-              suffixWidget: IconButton(
+              widget: IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.calendar_today_outlined),
               ),
@@ -61,11 +64,54 @@ class _BodyState extends State<Body> {
             const SizedBox(height: kDefaultPadding / 2),
             Row(
               children: [
-                Expanded(child: InputField(title: 'Start Time', hintText: '')),
+                Expanded(
+                    child: InputField(
+                  title: 'Start Time',
+                  hintText: _startTime,
+                  widget: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.access_time_rounded, size: 22),
+                  ),
+                )),
                 const SizedBox(width: kDefaultPadding / 2),
-                Expanded(child: InputField(title: 'End Time', hintText: ''))
+                Expanded(
+                    child: InputField(
+                  title: 'End Time',
+                  hintText: _endTime,
+                  widget: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.access_time_rounded, size: 22),
+                  ),
+                ))
               ],
-            )
+            ),
+            const SizedBox(height: kDefaultPadding / 2),
+            InputField(
+                title: 'Remind',
+                hintText: '$_selectedRemind minutes only',
+                enabled: false,
+                widget: DropdownButton(
+                  dropdownColor: kPrimaryColor,
+                  items: remindList
+                      .map((value) => DropdownMenuItem(
+                            value: value,
+                            child: Text(
+                              '$value',
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                          ))
+                      .toList(),
+                  icon: const Icon(Icons.keyboard_arrow_down),
+                  borderRadius: BorderRadius.circular(14),
+                  iconSize: 32,
+                  elevation: 8,
+                  underline: Container(height: 0),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _selectedRemind = newValue!;
+                    });
+                  },
+                )),
           ],
         ),
       ),

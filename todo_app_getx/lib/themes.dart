@@ -8,8 +8,8 @@ class Themes {
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: kPrimaryColor,
-      background: Colors.white,
       onPrimary: Colors.white,
+      background: Colors.white,
       secondary: Colors.pink,
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
@@ -27,15 +27,15 @@ class Themes {
     colorScheme: const ColorScheme(
       brightness: Brightness.dark,
       primary: kPrimaryColor,
-      background: Colors.black,
-      onPrimary: Colors.black,
+      onPrimary: Colors.white70,
+      background: Colors.black87,
       secondary: Colors.pink,
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
       onError: Colors.redAccent,
       onBackground: Colors.white70,
-      surface: Colors.black12,
-      onSurface: Colors.white60,
+      surface: Colors.black,
+      onSurface: Colors.white70,
     ),
     textTheme: buildTextTheme(),
     appBarTheme: buildAppBarTheme(),
@@ -88,7 +88,7 @@ AppBarTheme buildAppBarTheme() {
 InputDecorationTheme buildLightInputDecorationTheme() {
   var outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(color: Colors.black54),
+    borderSide: const BorderSide(color: Colors.black54,width: 1.5),
   );
   return InputDecorationTheme(
     border: outlineInputBorder,
@@ -102,7 +102,7 @@ InputDecorationTheme buildLightInputDecorationTheme() {
 InputDecorationTheme buildDarkInputDecorationTheme() {
   var outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(color: Colors.white70),
+    borderSide: const BorderSide(color: Colors.white70, width: 1.5),
   );
   return InputDecorationTheme(
     border: outlineInputBorder,
