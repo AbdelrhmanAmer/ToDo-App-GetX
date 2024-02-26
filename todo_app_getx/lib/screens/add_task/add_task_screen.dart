@@ -7,9 +7,7 @@ class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Add Task'),
-      ),
+      appBar: AppBar(),
       body: const Body(),
     );
   }

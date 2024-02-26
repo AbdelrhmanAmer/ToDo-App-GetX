@@ -16,7 +16,7 @@ class Themes {
       onError: Colors.redAccent,
       onBackground: Colors.white70,
       surface: Colors.white,
-      onSurface: Colors.black,
+      onSurface: Colors.black87,
     ),
     textTheme: buildTextTheme(),
     appBarTheme: buildAppBarTheme(),
@@ -35,7 +35,7 @@ class Themes {
       onError: Colors.redAccent,
       onBackground: Colors.white70,
       surface: Colors.black12,
-      onSurface: Colors.white,
+      onSurface: Colors.white60,
     ),
     textTheme: buildTextTheme(),
     appBarTheme: buildAppBarTheme(),
@@ -102,7 +102,7 @@ InputDecorationTheme buildLightInputDecorationTheme() {
 InputDecorationTheme buildDarkInputDecorationTheme() {
   var outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(color: Colors.white54),
+    borderSide: const BorderSide(color: Colors.white70),
   );
   return InputDecorationTheme(
     border: outlineInputBorder,
