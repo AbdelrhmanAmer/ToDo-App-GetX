@@ -9,16 +9,17 @@ class Themes {
       brightness: Brightness.light,
       primary: kPrimaryColor,
       background: Colors.white,
-      onPrimary: Colors.yellow,
+      onPrimary: Colors.white,
       secondary: Colors.pink,
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
       onError: Colors.redAccent,
       onBackground: Colors.white70,
-      surface: kPrimaryColor,
+      surface: Colors.white,
       onSurface: Colors.black,
     ),
     textTheme: buildTextTheme(),
+    appBarTheme: buildAppBarTheme(),
   );
 
   static final dark = ThemeData(
@@ -26,16 +27,17 @@ class Themes {
       brightness: Brightness.dark,
       primary: kPrimaryColor,
       background: Colors.black,
-      onPrimary: Colors.yellow,
+      onPrimary: Colors.black,
       secondary: Colors.pink,
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
       onError: Colors.redAccent,
       onBackground: Colors.white70,
-      surface: kPrimaryColor,
+      surface: Colors.black12,
       onSurface: Colors.white,
     ),
     textTheme: buildTextTheme(),
+    appBarTheme: buildAppBarTheme(),
   );
 
 }
@@ -61,7 +63,7 @@ AppBarTheme buildAppBarTheme() {
   return const AppBarTheme(
     centerTitle: true,
     titleTextStyle: TextStyle(
-      fontSize: 24,
+      fontSize: 22,
       fontWeight: FontWeight.w500,
       color: kTextColor,
     ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:todo_app_getx/screens/add_task/add_task_screen.dart';
 
-import '../../services/theme_service.dart';
-import '../notification/notification_screen.dart';
 import 'components/body.dart';
+import 'components/build_app_bar.dart';
+import 'components/floating_btn.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = '/home';
@@ -12,30 +12,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: buildAppBar(context), body: const Body());
-  }
-
-  AppBar buildAppBar(BuildContext context) {
-    return AppBar(
-      title:
-          Text('Home Screen', style: Theme.of(context).textTheme.headlineSmall),
-      leading: IconButton(
-          onPressed: () => ThemeServices().switchTheme(),
-          icon: const Icon(Icons.sunny)),
-      actions: [
-        IconButton(
-          onPressed: () {
-            Get.to(const NotificationScreen(
-              pyload:
-                  'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date',
-            ));
-          },
-          icon: SvgPicture.asset(
-            'assets/icons/Bell.svg',
-            colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
-          ),
-        )
-      ],
+    return Scaffold(
+      appBar: buildAppBar(context),
+      body: const Body(),
+      floatingActionButton: FloatingButton(press: () {
+        Get.to(const AddTaskScreen());
+      }),
     );
   }
 }
