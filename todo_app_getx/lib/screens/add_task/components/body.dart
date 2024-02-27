@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -58,7 +56,7 @@ class _BodyState extends State<Body> {
             InputField(
               title: 'Note',
               hintText: 'Enter note here',
-              controller: _titleController,
+              controller: _noteController,
             ),
             const SizedBox(height: kDefaultPadding / 3),
             InputField(
@@ -117,6 +115,7 @@ class _BodyState extends State<Body> {
             ),
             const SizedBox(height: kDefaultPadding / 3),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,13 +140,23 @@ class _BodyState extends State<Body> {
                       ),
                     )
                   ],
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: kPrimaryColor,
+                    foregroundColor: Colors.white70,
+                    textStyle: Get.theme.textTheme.bodyMedium,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+                  ),
+                  child: const Text('Create Task'),
                 )
               ],
-            )
+            ),
+            const SizedBox(height: kDefaultPadding),
           ],
         ),
       ),
     ));
   }
 }
-

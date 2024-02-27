@@ -28,7 +28,7 @@ class Themes {
       brightness: Brightness.dark,
       primary: kPrimaryColor,
       onPrimary: Colors.white70,
-      background: Colors.black87,
+      background: Colors.black,
       secondary: Colors.pink,
       onSecondary: Colors.pinkAccent,
       error: Colors.red,

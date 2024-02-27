@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FloatingButton extends StatelessWidget {
   const FloatingButton({
@@ -19,7 +20,7 @@ class FloatingButton extends StatelessWidget {
       onPressed: press,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
       tooltip: toolTip,
-      child: Icon(iconData),
+      child: Icon(iconData, color: Get.theme.colorScheme.surface,),
     );
   }
 }
