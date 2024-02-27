@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../constants.dart';
@@ -24,7 +23,7 @@ class InputField extends StatelessWidget {
   final TextEditingController? controller;
   final List<String>? values;
   final TextInputType? keyboardType;
-  final bool? enabled; 
+  final bool? enabled;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,23 +38,15 @@ class InputField extends StatelessWidget {
           controller: controller,
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle:
-                const TextStyle(fontSize: 15, color: Colors.grey),
+            hintStyle: TextStyle(
+                fontSize: 15,
+                color: Get.isDarkMode ? Colors.white60 : Colors.black54),
             suffixIcon: suffixIcon != null
-                ? Padding(
-                    padding: const EdgeInsets.all(kDefaultPadding / 2),
-                    child: SvgPicture.asset(
-                      suffixIcon!,
-                      colorFilter: ColorFilter.mode(
-                          Get.theme.colorScheme.onSurface,
-                          BlendMode.srcIn),
-                    ),
-                  )
-                : iconData != null
+                ? iconData != null
                     ? Icon(iconData)
-                    : widget,
+                    : widget
+                : null,
           ),
-          
           keyboardType: keyboardType,
         ),
       ],

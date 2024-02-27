@@ -121,7 +121,7 @@ class _BodyState extends State<Body> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Color',
-                        style: Get.theme.textTheme.bodyLarge!
+                        style: Theme.of(context).textTheme.bodyLarge!
                             .copyWith(color: Colors.white)),
                     const SizedBox(height: kDefaultPadding / 4),
                     Row(
@@ -146,7 +146,7 @@ class _BodyState extends State<Body> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: kPrimaryColor,
                     foregroundColor: Colors.white70,
-                    textStyle: Get.theme.textTheme.bodyMedium,
+                    textStyle: Theme.of(context).textTheme.bodyMedium,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
                   ),
                   child: const Text('Create Task'),

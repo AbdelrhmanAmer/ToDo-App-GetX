@@ -1,6 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../constants.dart';
@@ -17,18 +16,14 @@ AppBar buildAppBar(BuildContext context) {
       
     ),
     elevation: 0,
-    actions: [
+    actions: const [
       CircleAvatar(
         child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: SvgPicture.asset(
-            'assets/icons/person.svg',
-            colorFilter: ColorFilter.mode(
-                Get.theme.colorScheme.onSurface, BlendMode.srcIn),
-          ),
+          padding: EdgeInsets.all(8),
+          child: Icon(CupertinoIcons.person)
         ),
       ),
-      const SizedBox(width: kDefaultPadding / 4),
+      SizedBox(width: kDefaultPadding / 4),
     ],
   );
 }

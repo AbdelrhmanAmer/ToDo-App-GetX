@@ -20,7 +20,7 @@ class FloatingButton extends StatelessWidget {
       onPressed: press,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
       tooltip: toolTip,
-      child: Icon(iconData, color: Get.theme.colorScheme.surface,),
+      child: Icon(iconData, color: Theme.of(context).colorScheme.surface,),
     );
   }
 }

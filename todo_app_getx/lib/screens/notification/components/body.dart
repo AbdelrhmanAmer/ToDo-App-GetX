@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -36,20 +37,20 @@ class Body extends StatelessWidget {
                   children: [
                     TextSection(
                       title: 'Title',
-                      icon: 'assets/icons/title.svg',
+                      iconData: CupertinoIcons.text_insert,
                       description: pyload.split('|')[0],
                     ),
                     const SizedBox(height: kDefaultPadding),
                     TextSection(
                       title: 'Description',
-                      icon: 'assets/icons/description.svg',
+                      iconData: Icons.description,
                       description: pyload.split('|')[1],
                       iconHeight: 20,
                     ),
                     const SizedBox(height: kDefaultPadding),
                     TextSection(
                       title: 'Date',
-                      icon: 'assets/icons/date.svg',
+                      iconData: Icons.date_range,
                       description: pyload.split('|')[2],
                     ),
                   ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
 
@@ -7,14 +6,15 @@ class TextSection extends StatelessWidget {
   const TextSection({
     super.key,
     required this.title,
-    required this.icon,
+    required this.iconData,
     required this.description,
     this.color = Colors.white,
     this.iconHeight = 22,
   });
 
-  final String title, icon, description;
+  final String title, description;
   final Color color;
+  final IconData iconData;
   final double iconHeight;
 
   @override
@@ -25,12 +25,7 @@ class TextSection extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              icon,
-              height: iconHeight,
-              colorFilter:
-                  ColorFilter.mode(color, BlendMode.srcIn),
-            ),
+            Icon(iconData, color: Colors.white,),
             const SizedBox(width: kDefaultPadding / 2),
             Text(title,
                 style: Theme.of(context)
@@ -41,10 +36,7 @@ class TextSection extends StatelessWidget {
         ),
         Text(
           description,
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall!
-              .copyWith(color: color),
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(color: color),
         ),
       ],
     );

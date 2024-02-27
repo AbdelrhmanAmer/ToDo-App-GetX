@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_app_getx/screens/add_task/add_task_screen.dart';
 
+import '../add_task/add_task_screen.dart';
 import 'components/body.dart';
 import 'components/build_app_bar.dart';
 import 'components/floating_btn.dart';
@@ -15,8 +15,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: const Body(),
-      floatingActionButton: FloatingButton(press: () {
-        Get.to(const AddTaskScreen());
+      floatingActionButton: FloatingButton(press: () async{
+        await Get.to(const AddTaskScreen());
       }),
     );
   }

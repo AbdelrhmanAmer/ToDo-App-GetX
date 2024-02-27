@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
+import 'package:flutter/cupertino.dart';
 
 import '../../../constants.dart';
 
@@ -33,11 +31,7 @@ class ColorDot extends StatelessWidget {
         margin: const EdgeInsets.only(right: kDefaultPadding / 2),
         padding: const EdgeInsets.all(6),
         child: isSelected
-            ? SvgPicture.asset(
-                'assets/icons/correct.svg',
-                colorFilter: ColorFilter.mode(
-                    Get.theme.colorScheme.onSurface, BlendMode.srcIn),
-              )
+            ? Icon(CupertinoIcons.add)
             : null,
       ),
     );
