@@ -29,9 +29,9 @@ class ColorDot extends StatelessWidget {
           color: color,
         ),
         margin: const EdgeInsets.only(right: kDefaultPadding / 2),
-        padding: const EdgeInsets.all(6),
+        padding: const EdgeInsets.all(2),
         child: isSelected
-            ? Icon(CupertinoIcons.add)
+            ? const Icon(CupertinoIcons.checkmark_alt, size: 20,)
             : null,
       ),
     );

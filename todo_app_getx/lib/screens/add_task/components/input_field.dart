@@ -8,7 +8,6 @@ class InputField extends StatelessWidget {
     super.key,
     required this.title,
     this.hintText = '',
-    this.suffixIcon,
     this.widget,
     this.iconData,
     this.controller,
@@ -17,7 +16,7 @@ class InputField extends StatelessWidget {
     this.enabled = true,
   });
   final String title, hintText;
-  final String? suffixIcon;
+
   final IconData? iconData;
   final Widget? widget;
   final TextEditingController? controller;
@@ -37,16 +36,13 @@ class InputField extends StatelessWidget {
         TextFormField(
           controller: controller,
           decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: TextStyle(
-                fontSize: 15,
-                color: Get.isDarkMode ? Colors.white60 : Colors.black54),
-            suffixIcon: suffixIcon != null
-                ? iconData != null
-                    ? Icon(iconData)
-                    : widget
-                : null,
-          ),
+              hintText: hintText,
+              hintStyle: TextStyle(
+                  fontSize: 15,
+                  color: Get.isDarkMode
+                      ? Colors.white60
+                      : Colors.black87.withOpacity(.7)),
+              suffixIcon: iconData != null ? Icon(iconData) : widget),
           keyboardType: keyboardType,
         ),
       ],

@@ -24,17 +24,18 @@ AppBar buildAppBar(BuildContext context) {
                 'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date',
           ));
         },
-        icon: const Icon(CupertinoIcons.bell),
-        style: IconButton.styleFrom(
-          backgroundColor: kPrimaryColor,
-          foregroundColor: Theme.of(context).colorScheme.surface,
+        icon: Icon(
+          CupertinoIcons.bell,
+          color: Theme.of(context).colorScheme.surface,
         ),
+        style: IconButton.styleFrom(backgroundColor: kPrimaryColor),
       ),
       const SizedBox(width: kDefaultPadding / 4),
-      const CircleAvatar(
+      CircleAvatar(
         child: Padding(
-          padding: EdgeInsets.all(8),
-          child: Icon(CupertinoIcons.person)
+          padding: const EdgeInsets.all(8),
+          child: Icon(CupertinoIcons.person,
+              color: Theme.of(context).colorScheme.surface),
         ),
       ),
       const SizedBox(width: kDefaultPadding / 4),
