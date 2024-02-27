@@ -1,41 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../../constants.dart';
+import 'home_header.dart';
+import 'month_date_time_line.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
+    double size = MediaQuery.of(context).size.height;
+
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-        child: Column(
-          children: [
-            RichText(
-                text: TextSpan(
+      child: Column(
+        children: [
+          Container(
+            height: size * .35,
+            decoration:
+                BoxDecoration(color: Theme.of(context).colorScheme.secondary),
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
+            child: const Column(
               children: [
-                TextSpan(
-                  text: '${DateFormat.yMMMMd().format(DateTime.now())}\n',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(fontWeight: FontWeight.bold),
-                ),
-                TextSpan(
-                  text: 'Today',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontWeight: FontWeight.bold),
-                ),
+                HomeHeader(),
+                SizedBox(height: kDefaultPadding),
+                MonthDateTimeLine(),
               ],
-            ))
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
+

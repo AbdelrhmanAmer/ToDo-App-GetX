@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../controllers/task_controller.dart';
 import '../add_task/add_task_screen.dart';
 import 'components/body.dart';
-import 'components/build_app_bar.dart';
 import 'components/floating_btn.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,11 +12,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TaskController _taskController = Get.put(TaskController());
+
     return Scaffold(
-      appBar: buildAppBar(context),
+      // appBar: buildAppBar(context),
       body: const Body(),
-      floatingActionButton: FloatingButton(press: () async{
+      floatingActionButton: FloatingButton(press: () async {
         await Get.to(const AddTaskScreen());
+        // _taskController.getTasks();
       }),
     );
   }

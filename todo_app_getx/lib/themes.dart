@@ -8,9 +8,9 @@ class Themes {
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: kPrimaryColor,
-      onPrimary: Colors.white,
+      onPrimary: Colors.black,
       background: Colors.white,
-      secondary: Colors.pink,
+      secondary: Color(0xFFE7E8EA),
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
       onError: Colors.redAccent,
@@ -27,9 +27,9 @@ class Themes {
     colorScheme: const ColorScheme(
       brightness: Brightness.dark,
       primary: kPrimaryColor,
-      onPrimary: Colors.white70,
+      onPrimary: Colors.white,
       background: Colors.black,
-      secondary: Colors.pink,
+      secondary: Color(0xFF232228),
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
       onError: Colors.redAccent,
