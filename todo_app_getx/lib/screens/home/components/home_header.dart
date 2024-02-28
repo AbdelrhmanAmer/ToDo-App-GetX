@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../notification/notification_screen.dart';
 import '../../../constants.dart';
 import '../../../services/theme_service.dart';
 
@@ -17,19 +18,27 @@ class HomeHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            onPressed: () {
-              ThemeServices().switchTheme();
+          GetBuilder<ThemeServices>(
+            builder: (themeController) {
+              return IconButton(
+                onPressed: () {
+                  themeController.switchTheme();
+                },
+                icon: Icon(
+                  themeController.theme == ThemeMode.dark
+                      ? CupertinoIcons.brightness_solid
+                      : CupertinoIcons.moon_fill,
+                ),
+              );
             },
-            icon: Icon(
-              Get.isDarkMode
-                  ? CupertinoIcons.moon_fill
-                  : CupertinoIcons.sun_max,
-            ),
           ),
           const Text('Schedule'),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(const NotificationScreen(
+                    pyload:
+                        'Notification Title |Free Download Document UI Description SVG vector file in monocolor and multicolor type for Sketch and Figma from Document UI Description Vectors svg vector collection. |date'));
+              },
               icon: Stack(
                 children: [
                   const Icon(CupertinoIcons.bell),

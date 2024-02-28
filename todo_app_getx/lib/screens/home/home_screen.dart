@@ -17,10 +17,12 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // appBar: buildAppBar(context),
       body: const Body(),
-      floatingActionButton: FloatingButton(press: () async {
-        await Get.to(const AddTaskScreen());
-        // _taskController.getTasks();
-      }),
+      floatingActionButton: FloatingButton(
+        press: () async {
+          await Get.to(const AddTaskScreen());
+          // _taskController.getTasks();
+        },
+      ),
     );
   }
 }
