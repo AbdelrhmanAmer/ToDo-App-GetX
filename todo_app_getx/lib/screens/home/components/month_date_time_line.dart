@@ -15,15 +15,15 @@ class MonthDateTimeLine extends StatelessWidget {
       initialDate: DateTime.now(),
       headerProps: EasyHeaderProps(
         showHeader: true,
-        showMonthPicker: false,
+        showMonthPicker: true,
         showSelectedDate: true,
         selectedDateStyle: TextStyle(
             color: Theme.of(context).colorScheme.onPrimary, fontSize: 22),
         centerHeader: true,
-        monthPickerType: MonthPickerType.switcher,
+        monthPickerType: MonthPickerType.dropDown,
         monthStyle: TextStyle(
-            fontSize: 36, color: Theme.of(context).colorScheme.onPrimary),
-        dateFormatter: const DateFormatter.custom('MMMM,  y'),
+            fontSize: 20, color: Theme.of(context).colorScheme.onPrimary),
+        dateFormatter: const DateFormatter.custom('yyy'),
         padding: const EdgeInsets.only(bottom: kDefaultPadding / 1.5),
       ),
       itemBuilder: (ctx, day, weak, month, dateTime, selected) {
@@ -33,6 +33,7 @@ class MonthDateTimeLine extends StatelessWidget {
             right: kDefaultPadding / 2,
             top: !selected ? kDefaultPadding / 2 : 0.0,
           ),
+          // decoration: BoxDecoration(border: Border.all(color: Colors.red)),
           child: RichText(
             text: TextSpan(children: [
               TextSpan(
@@ -43,7 +44,10 @@ class MonthDateTimeLine extends StatelessWidget {
                   fontSize: selected ? 35 : 25,
                   color: selected
                       ? Theme.of(context).colorScheme.onPrimary
-                      : Theme.of(context).colorScheme.onSurface.withOpacity(.3),
+                      : Theme.of(context)
+                          .colorScheme
+                          .onSurface
+                          .withOpacity(.3),
                 ),
               ),
               TextSpan(
@@ -54,7 +58,10 @@ class MonthDateTimeLine extends StatelessWidget {
                   fontSize: selected ? 17 : 14,
                   color: selected
                       ? Theme.of(context).colorScheme.onPrimary
-                      : Theme.of(context).colorScheme.onSurface.withOpacity(.3),
+                      : Theme.of(context)
+                          .colorScheme
+                          .onSurface
+                          .withOpacity(.3),
                 ),
               )
             ]),

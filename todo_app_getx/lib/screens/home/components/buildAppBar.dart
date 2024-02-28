@@ -6,15 +6,15 @@ import '../../notification/notification_screen.dart';
 import '../../../constants.dart';
 import '../../../services/theme_service.dart';
 
-class HomeHeader extends StatelessWidget {
-  const HomeHeader({
+class PageTitle extends StatelessWidget {
+  const PageTitle({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding/ 1.5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
