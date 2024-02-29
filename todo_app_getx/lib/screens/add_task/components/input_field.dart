@@ -30,7 +30,7 @@ class InputField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(color: Colors.white),
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
         const SizedBox(height: kDefaultPadding / 4),
         TextFormField(

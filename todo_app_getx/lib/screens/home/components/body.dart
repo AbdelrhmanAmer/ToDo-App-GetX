@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
 import 'custom_appbar.dart';
 
 class Body extends StatelessWidget {
@@ -7,15 +8,24 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-
     return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(),
+          const CustomAppBar(),
+          const SizedBox(height: kDefaultPadding),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            child: Text('Today\'s task',
+                style: Theme.of(context).textTheme.headlineSmall),
+          ),
+          Row(
+            children: [
+              Text('')
+            ],
+          )
         ],
       ),
     );
   }
 }
-

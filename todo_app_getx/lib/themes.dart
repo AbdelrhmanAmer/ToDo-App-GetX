@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'constants.dart';
@@ -16,7 +17,7 @@ class Themes {
       onError: Colors.redAccent,
       onBackground: Colors.white70,
       surface: Colors.white,
-      onSurface: Colors.black87,
+      onSurface: Colors.black,
     ),
     textTheme: buildTextTheme(),
     appBarTheme: buildAppBarTheme(),
@@ -35,7 +36,7 @@ class Themes {
       onError: Colors.redAccent,
       onBackground: Colors.white70,
       surface: Colors.black,
-      onSurface: Colors.white70,
+      onSurface: Colors.white,
     ),
     textTheme: buildTextTheme(),
     appBarTheme: buildAppBarTheme(),
@@ -50,9 +51,9 @@ TextTheme buildTextTheme() {
     headlineMedium: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 26)),
     headlineSmall: GoogleFonts.lato(
-        textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 23)),
-    titleLarge: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+    titleLarge: GoogleFonts.lato(
+        textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 21)),
     titleMedium: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
     titleSmall: GoogleFonts.lato(

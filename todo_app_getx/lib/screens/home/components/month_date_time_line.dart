@@ -33,7 +33,6 @@ class MonthDateTimeLine extends StatelessWidget {
             right: kDefaultPadding / 2,
             top: !selected ? kDefaultPadding / 2 : 0.0,
           ),
-          // decoration: BoxDecoration(border: Border.all(color: Colors.red)),
           child: RichText(
             text: TextSpan(children: [
               TextSpan(
