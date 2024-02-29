@@ -26,24 +26,22 @@ class TaskDescription extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style: Theme.of(context).textTheme.bodySmall),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: Colors.white)),
           Row(
             children: [
               Icon(
                 CupertinoIcons.alarm,
-                color:
-                    Theme.of(context).colorScheme.onBackground.withOpacity(.5),
+                color: Colors.white.withOpacity(.5),
                 size: 14,
               ),
               const SizedBox(width: kDefaultPadding / 4),
               Text(
                 '$startTime $startTimePeriod - $endTime $endTimePeriod',
                 style: TextStyle(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onBackground
-                        .withOpacity(.5),
-                    fontSize: 14),
+                    color: Colors.white.withOpacity(.5), fontSize: 14),
               ),
             ],
           ),
@@ -51,19 +49,14 @@ class TaskDescription extends StatelessWidget {
             children: [
               Icon(
                 Icons.date_range_outlined,
-                color:
-                    Theme.of(context).colorScheme.onBackground.withOpacity(.5),
+                color: Colors.white.withOpacity(.5),
                 size: 14,
               ),
               const SizedBox(width: kDefaultPadding / 4),
               Text(
                 DateFormat.MMMd().format(dateTime),
                 style: TextStyle(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onBackground
-                        .withOpacity(.5),
-                    fontSize: 14),
+                    color: Colors.white.withOpacity(.5), fontSize: 14),
               ),
             ],
           )
@@ -72,4 +65,3 @@ class TaskDescription extends StatelessWidget {
     );
   }
 }
-

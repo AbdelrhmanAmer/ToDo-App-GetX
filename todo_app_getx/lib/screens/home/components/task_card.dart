@@ -17,7 +17,7 @@ class TaskCard extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: kDefaultPadding/2),
       child: Row(
         children: [
           Expanded(
@@ -50,7 +50,7 @@ class TaskCard extends StatelessWidget {
                   dateTime: task.dateTime,
                 ),
                 const SizedBox(width: kDefaultPadding / 3),
-                TaskChart(completionPercentage: task.completionPercentage),
+                TaskChart(completionPercentage: task.completionPercentage, color: task.chartColor),
                 const SizedBox(width: kDefaultPadding / 3),
               ],
             ),

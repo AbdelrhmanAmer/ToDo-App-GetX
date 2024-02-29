@@ -22,12 +22,12 @@ class Body extends StatelessWidget {
               child: Text('Today\'s task',
                   style: Theme.of(context).textTheme.headlineSmall),
             ),
-            const SizedBox(height: kDefaultPadding),
-            TaskCard(task: demoTasks[0]),
+            const SizedBox(height: kDefaultPadding/2),
+            ...List.generate(
+                demoTasks.length, (index) => TaskCard(task: demoTasks[index])),
           ],
         ),
       ),
     );
   }
 }
-

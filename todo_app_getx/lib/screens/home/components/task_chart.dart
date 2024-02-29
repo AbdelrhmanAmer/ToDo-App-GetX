@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 class TaskChart extends StatelessWidget {
   const TaskChart({
     super.key,
-    required this.completionPercentage,
+    required this.completionPercentage, 
+    this.color = Colors.orange
   });
   final double completionPercentage;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class TaskChart extends StatelessWidget {
               sections: [
                 PieChartSectionData(
                   value: completionPercentage,
+                  color: color,
                   showTitle: false,
                   radius: 4,
                 ),
@@ -37,7 +40,7 @@ class TaskChart extends StatelessWidget {
           ),
           Text(
             '$completionPercentage',
-            style: const TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 14, color: Colors.white),
           )
         ],
       ),

@@ -13,18 +13,18 @@ class Task {
   final double completionPercentage;
   final Color cardColor;
   DateTime dateTime;
-  Color? chartColor;
+  Color chartColor;
 
-  Task({
-    required this.title,
-    required this.startTime,
-    required this.endTime,
-    required this.startTimePeriod,
-    required this.endTimePeriod,
-    required this.completionPercentage,
-    this.cardColor = kSecondaryColor,
-  })  : chartColor = chartColors[Random().nextInt(chartColors.length)],
-        dateTime = DateTime.now();
+  Task(
+      {required this.title,
+      required this.startTime,
+      required this.endTime,
+      required this.startTimePeriod,
+      required this.endTimePeriod,
+      required this.completionPercentage,
+      this.cardColor = kSecondaryColor,
+      this.chartColor = Colors.orange})
+      : dateTime = DateTime.now();
 }
 
 List<Color> chartColors = [
@@ -43,6 +43,8 @@ List<Task> demoTasks = [
     startTimePeriod: 'AM',
     endTimePeriod: 'AM',
     completionPercentage: 70,
+    cardColor: const Color(0xFF724FD2),
+    chartColor: Colors.white,
   ),
   Task(
     title: 'Lunch Break',
@@ -50,7 +52,8 @@ List<Task> demoTasks = [
     endTime: 13,
     startTimePeriod: 'PM',
     endTimePeriod: 'PM',
-    completionPercentage: 30,
+    completionPercentage: 60,
+    chartColor: Colors.blueAccent,
   ),
   Task(
     title: 'Project Presentation',
@@ -59,6 +62,7 @@ List<Task> demoTasks = [
     startTimePeriod: 'PM',
     endTimePeriod: 'PM',
     completionPercentage: 80,
+    chartColor: Colors.greenAccent,
   ),
   Task(
     title: 'Coding Session',
@@ -66,7 +70,8 @@ List<Task> demoTasks = [
     endTime: 20,
     startTimePeriod: 'PM',
     endTimePeriod: 'PM',
-    completionPercentage: 60,
+    completionPercentage: 90,
+    chartColor: Colors.redAccent,
   ),
   Task(
     title: 'Read a Book',
@@ -74,22 +79,7 @@ List<Task> demoTasks = [
     endTime: 21,
     startTimePeriod: 'PM',
     endTimePeriod: 'PM',
-    completionPercentage: 20,
-  ),
-  Task(
-    title: 'Exercise',
-    startTime: 7,
-    endTime: 8,
-    startTimePeriod: 'AM',
-    endTimePeriod: 'AM',
-    completionPercentage: 90,
-  ),
-  Task(
-    title: 'Movie Night',
-    startTime: 22,
-    endTime: 23,
-    startTimePeriod: 'PM',
-    endTimePeriod: 'PM',
-    completionPercentage: 40,
+    completionPercentage: 30,
+    chartColor: Colors.white,
   ),
 ];
