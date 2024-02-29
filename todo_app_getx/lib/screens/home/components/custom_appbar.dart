@@ -11,23 +11,11 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.height;
-    print(size);
     return Container(
-      height: size < 510
-          ? size * .55
-          : size < 540
-              ? size * .5
-              : size < 563
-                  ? size * .47
-                  : size < 590
-                      ? size * .45
-                      : size < 634
-                          ? size * .43
-                          : size < 600
-                              ? size * .4
-                              : size * .41,
-      decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
+      height: 254,
+      decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondary,
+          borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10))),
       padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
       child: const Column(
         children: [

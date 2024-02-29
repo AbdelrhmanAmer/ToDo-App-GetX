@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'constants.dart';
@@ -11,11 +10,11 @@ class Themes {
       primary: kPrimaryColor,
       onPrimary: Colors.black,
       background: Colors.white,
+      onBackground: Colors.black87,
       secondary: Color(0xFFE7E8EA),
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
-      onError: Colors.redAccent,
-      onBackground: Colors.white70,
+      onError: Color.fromRGBO(255, 82, 82, 1),
       surface: Colors.white,
       onSurface: Colors.black,
     ),
@@ -30,11 +29,11 @@ class Themes {
       primary: kPrimaryColor,
       onPrimary: Colors.white,
       background: Colors.black,
-      secondary: Color(0xFF232228),
+      onBackground: Colors.white70,
+      secondary: kSecondaryColor,
       onSecondary: Colors.pinkAccent,
       error: Colors.red,
       onError: Colors.redAccent,
-      onBackground: Colors.white70,
       surface: Colors.black,
       onSurface: Colors.white,
     ),
@@ -64,9 +63,9 @@ TextTheme buildTextTheme() {
         textStyle: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
     bodySmall: GoogleFonts.lato(
         textStyle: const TextStyle(
-            fontWeight: FontWeight.w300, fontSize: 15, height: 1.3)),
+            fontWeight: FontWeight.w400, fontSize: 15)),
     labelLarge: GoogleFonts.lato(
-        textStyle: const TextStyle(fontWeight: FontWeight.w300, fontSize: 15)),
+        textStyle: const TextStyle(fontWeight: FontWeight.w300, fontSize: 15, height: 1.3)),
     labelMedium: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w300, fontSize: 14)),
     labelSmall: GoogleFonts.lato(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../../../models/task.dart';
 import 'custom_appbar.dart';
+import 'task_card.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -9,23 +11,23 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const CustomAppBar(),
-          const SizedBox(height: kDefaultPadding),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            child: Text('Today\'s task',
-                style: Theme.of(context).textTheme.headlineSmall),
-          ),
-          Row(
-            children: [
-              Text('')
-            ],
-          )
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CustomAppBar(),
+            const SizedBox(height: kDefaultPadding),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              child: Text('Today\'s task',
+                  style: Theme.of(context).textTheme.headlineSmall),
+            ),
+            const SizedBox(height: kDefaultPadding),
+            TaskCard(task: demoTasks[0]),
+          ],
+        ),
       ),
     );
   }
 }
+

@@ -36,7 +36,7 @@ class TextSection extends StatelessWidget {
         ),
         Text(
           description,
-          style: Theme.of(context).textTheme.bodySmall!.copyWith(color: color),
+          style: Theme.of(context).textTheme.labelLarge!.copyWith(color: color),
         ),
       ],
     );
