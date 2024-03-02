@@ -1,15 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo_app_getx/services/notification_services.dart';
 
 import '../../notification/notification_screen.dart';
 import '../../../constants.dart';
 import '../../../services/theme_service.dart';
 
-class PageTitle extends StatelessWidget {
+class PageTitle extends StatefulWidget {
   const PageTitle({
     super.key,
   });
+
+  @override
+  State<PageTitle> createState() => _PageTitleState();
+}
+
+class _PageTitleState extends State<PageTitle> {
+  late NotifyHelper notifyHelper;
+
+  @override
+  void initState() {
+    super.initState();
+    notifyHelper = NotifyHelper();
+    notifyHelper.requestAndroidPermissions();
+    notifyHelper.initializeNotification();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +39,8 @@ class PageTitle extends StatelessWidget {
               return IconButton(
                 onPressed: () {
                   themeController.switchTheme();
+                  notifyHelper.displayNotification(title: 'Theme Switched', body: 'Notification Body');
+                  // notifyHelper.scheduleNotification();
                 },
                 icon: Icon(
                   themeController.theme == ThemeMode.dark

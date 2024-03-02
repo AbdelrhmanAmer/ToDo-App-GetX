@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,6 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('${MediaQuery.of(context).size.height}');
     return Container(
       height: 264,
       decoration: BoxDecoration(
