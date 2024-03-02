@@ -6,9 +6,14 @@ import 'custom_appbar.dart';
 import 'task_card.dart';
 import 'task_not_found.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({super.key});
 
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -18,13 +23,7 @@ class Body extends StatelessWidget {
           children: [
             const CustomAppBar(),
             const SizedBox(height: kDefaultPadding),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-            //   child: Text('Today\'s task',
-            //       style: Theme.of(context).textTheme.headlineSmall),
-            // ),
-            const SizedBox(height: kDefaultPadding / 2),
-            if (demoTasks.isEmpty)
+            if (demoTasks.isNotEmpty)
               const TasksNotFound()
             else
               ...List.generate(demoTasks.length,
