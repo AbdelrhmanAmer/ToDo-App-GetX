@@ -29,10 +29,10 @@ class Task {
 
 List<Color> chartColors = [
   Colors.white,
-  Colors.blue,
-  Colors.green,
-  Colors.red,
-  Colors.orange,
+  const Color(0xFF39A7F9),
+  const Color(0xFF4EDA66),
+  const Color(0xFFDE2968),
+  const Color.fromARGB(255, 255, 187, 85),
 ];
 
 List<Task> demoTasks = [
@@ -53,7 +53,7 @@ List<Task> demoTasks = [
     startTimePeriod: 'PM',
     endTimePeriod: 'PM',
     completionPercentage: 60,
-    chartColor: Colors.blueAccent,
+    chartColor: const Color(0xFF39A7F9),
   ),
   Task(
     title: 'Project Presentation',
@@ -62,7 +62,7 @@ List<Task> demoTasks = [
     startTimePeriod: 'PM',
     endTimePeriod: 'PM',
     completionPercentage: 80,
-    chartColor: Colors.greenAccent,
+    chartColor: const Color(0xFF4EDA66),
   ),
   Task(
     title: 'Coding Session',
@@ -71,7 +71,7 @@ List<Task> demoTasks = [
     startTimePeriod: 'PM',
     endTimePeriod: 'PM',
     completionPercentage: 90,
-    chartColor: Colors.redAccent,
+    chartColor: const Color(0xFFDE2968),
   ),
   Task(
     title: 'Read a Book',

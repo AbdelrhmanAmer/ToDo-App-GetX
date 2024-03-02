@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+
 class TaskChart extends StatelessWidget {
   const TaskChart({
     super.key,
@@ -30,7 +31,7 @@ class TaskChart extends StatelessWidget {
                   radius: 4,
                 ),
                 PieChartSectionData(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Colors.black.withOpacity(.5),
                   value: 100 - completionPercentage,
                   showTitle: false,
                   radius: 4,

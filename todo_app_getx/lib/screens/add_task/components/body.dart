@@ -21,9 +21,9 @@ class _BodyState extends State<Body> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _noteController = TextEditingController();
 
-  DateTime _selectedDate = DateTime.now();
-  String _startTime = DateFormat('hh:mm a').format(DateTime.now()).toString();
-  String _endTime = DateFormat('hh:mm a')
+  final DateTime _selectedDate = DateTime.now();
+  final String _startTime = DateFormat('hh:mm a').format(DateTime.now()).toString();
+  final String _endTime = DateFormat('hh:mm a')
       .format(DateTime.now().add(const Duration(minutes: 15)))
       .toString();
 

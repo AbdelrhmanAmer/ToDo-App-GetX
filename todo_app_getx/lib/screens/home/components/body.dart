@@ -4,6 +4,7 @@ import '../../../constants.dart';
 import '../../../models/task.dart';
 import 'custom_appbar.dart';
 import 'task_card.dart';
+import 'task_not_found.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -17,17 +18,21 @@ class Body extends StatelessWidget {
           children: [
             const CustomAppBar(),
             const SizedBox(height: kDefaultPadding),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-              child: Text('Today\'s task',
-                  style: Theme.of(context).textTheme.headlineSmall),
-            ),
-            const SizedBox(height: kDefaultPadding/2),
-            ...List.generate(
-                demoTasks.length, (index) => TaskCard(task: demoTasks[index])),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            //   child: Text('Today\'s task',
+            //       style: Theme.of(context).textTheme.headlineSmall),
+            // ),
+            const SizedBox(height: kDefaultPadding / 2),
+            if (demoTasks.isEmpty)
+              const TasksNotFound()
+            else
+              ...List.generate(demoTasks.length,
+                  (index) => TaskCard(task: demoTasks[index])),
           ],
         ),
       ),
     );
   }
 }
+
