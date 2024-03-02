@@ -23,7 +23,7 @@ class _BodyState extends State<Body> {
           children: [
             const CustomAppBar(),
             const SizedBox(height: kDefaultPadding),
-            if (demoTasks.isNotEmpty)
+            if (demoTasks.isEmpty)
               const TasksNotFound()
             else
               ...List.generate(demoTasks.length,

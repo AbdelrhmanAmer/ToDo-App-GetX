@@ -14,10 +14,10 @@ class ThemeServices extends GetxController {
     return _box.read<bool>(_key) ?? false;
   }
 
-  ThemeMode get theme => _getThemeFromBox() ? ThemeMode.dark : ThemeMode.light;
+  ThemeMode get theme => _getThemeFromBox() ? ThemeMode.light : ThemeMode.dark;
 
   void switchTheme() {
-    Get.changeThemeMode(_getThemeFromBox() ? ThemeMode.light : ThemeMode.dark);
+    Get.changeThemeMode(_getThemeFromBox() ? ThemeMode.dark : ThemeMode.light);
     _saveThemeToBox(!_getThemeFromBox());
     update(); // This triggers a rebuild of the widgets using this controller.
   }
