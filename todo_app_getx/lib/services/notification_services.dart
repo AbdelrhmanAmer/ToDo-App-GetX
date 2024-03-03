@@ -60,22 +60,19 @@ class NotifyHelper {
   }
 
   scheduleNotification() async {
-    await flutterLocalNotificationsPlugin.periodicallyShow(
+    await flutterLocalNotificationsPlugin.zonedSchedule(
       0,
       'scheduled title',
       'scheduled body',
-      RepeatInterval.everyMinute,
+      tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
       const NotificationDetails(
         android: AndroidNotificationDetails(
-          'your channel id',
-          'your channel name',
-          channelDescription: 'your channel description',
-          importance: Importance.max,
-          priority: Priority.high,
-          ticker: 'ticker',
-        ),
+            'your channel id', 'your channel name',
+            channelDescription: 'your channel description'),
       ),
-      payload: 'asdfasdf|dessscription|---------asdf---',
+      androidScheduleMode: AndroidScheduleMode.exact,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
     );
   }
 
@@ -92,12 +89,11 @@ class NotifyHelper {
     if (notificationResponse.payload != null) {
       debugPrint('notification payload: $payload');
     }
-    Get.to(NotificationScreen(pyload: payload!));
+    Get.to(() => NotificationScreen(pyload: payload!));
   }
 
   void onDidReceiveLocalNotification(
       int id, String title, String? body, String? payload) async {
-    // display a dialog with the notification details, tap ok to go to another page
     Get.dialog(Text(body!));
   }
 }

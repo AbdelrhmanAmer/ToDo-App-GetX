@@ -44,14 +44,14 @@ class Body extends StatelessWidget {
                     TextSection(
                       title: 'Description',
                       iconData: Icons.description,
-                      description: pyload.split('|')[1],
+                      description: pyload.split('|')[0],
                       iconHeight: 20,
                     ),
                     const SizedBox(height: kDefaultPadding),
                     TextSection(
                       title: 'Date',
                       iconData: Icons.date_range,
-                      description: pyload.split('|')[2],
+                      description: pyload.split('|')[0],
                     ),
                   ],
                 ),
