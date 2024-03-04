@@ -4,14 +4,17 @@ import '../constants.dart';
 
 class Task {
   final String title;
+  final String description;
   final int startTime;
   final int endTime;
+  final int remind;
   final String startTimePeriod;
   final String endTimePeriod;
+  final String repeat;
   final double completionPercentage;
   final Color cardColor;
-  DateTime dateTime;
   Color chartColor;
+  DateTime dateTime;
 
   Task(
       {required this.title,
@@ -20,6 +23,10 @@ class Task {
       required this.startTimePeriod,
       required this.endTimePeriod,
       required this.completionPercentage,
+      this.description =
+          'Some Android OEMs have their own customised Android OS that can prevent applications from running in the background. Consequently, scheduled notifications may not work when the application is in the background on certain devices (e.g. by Xiaomi, Huawei).',
+      this.remind = 5,
+      this.repeat = 'none',
       this.cardColor = kSecondaryColor,
       this.chartColor = Colors.orange})
       : dateTime = DateTime.now();

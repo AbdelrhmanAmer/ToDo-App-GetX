@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,8 +39,9 @@ class _PageTitleState extends State<PageTitle> {
           GetBuilder<ThemeServices>(
             builder: (themeController) {
               return IconButton(
-                onPressed: () {
+                onPressed: () async{
                   themeController.switchTheme();
+                  log('Displaying notification');
                   notifyHelper.displayNotification(title: 'Theme Switched', body: 'Notification Body',);
                   notifyHelper.scheduleNotification();
                 },

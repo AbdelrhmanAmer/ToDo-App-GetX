@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:todo_app_getx/screens/details/details_screen.dart';
 
 import '../../../constants.dart';
 import '../../../models/task.dart';
@@ -26,12 +28,17 @@ class _BodyState extends State<Body> {
             if (demoTasks.isEmpty)
               const TasksNotFound()
             else
-              ...List.generate(demoTasks.length,
-                  (index) => TaskCard(task: demoTasks[index])),
+              ...List.generate(
+                demoTasks.length,
+                (index) => TaskCard(
+                  task: demoTasks[index],
+                  press: () =>
+                      Get.to(() => DetailsScreen(task: demoTasks[index])),
+                ),
+              ),
           ],
         ),
       ),
     );
   }
 }
-
