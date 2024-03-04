@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/task.dart';
-import 'heading.dart';
+import 'heading/heading.dart';
 
 class Body extends StatelessWidget {
   const Body({

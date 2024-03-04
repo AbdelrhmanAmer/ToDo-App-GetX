@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../constants.dart';
-import '../../../models/task.dart';
+import '../../../../constants.dart';
+import '../../../../models/task.dart';
 
 class DueDate extends StatelessWidget {
   const DueDate({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../models/task.dart';
+import '../../../../models/task.dart';
 
 class EditableTitle extends StatelessWidget {
   const EditableTitle({

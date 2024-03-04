@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-import '../../../models/task.dart';
+import '../../../../constants.dart';
+import '../../../../models/task.dart';
 import 'due_date.dart';
 import 'editable_title.dart';
 import 'task_members.dart';
