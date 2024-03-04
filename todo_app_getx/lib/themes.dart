@@ -50,9 +50,9 @@ TextTheme buildTextTheme() {
     headlineMedium: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 26)),
     headlineSmall: GoogleFonts.lato(
-        textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 22)),
+        textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 24)),
     titleLarge: GoogleFonts.lato(
-        textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 21)),
+        textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 22)),
     titleMedium: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
     titleSmall: GoogleFonts.lato(
