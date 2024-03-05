@@ -24,23 +24,23 @@ class Themes {
   );
 
   static final dark = ThemeData(
-    colorScheme: const ColorScheme(
-      brightness: Brightness.dark,
-      primary: kPrimaryColor,
-      onPrimary: Colors.white,
-      background: Color(0xFF171719),
-      onBackground: Colors.white70,
-      secondary: kSecondaryColor,
-      onSecondary: Colors.pinkAccent,
-      error: Colors.red,
-      onError: Colors.redAccent,
-      surface: Colors.black,
-      onSurface: Colors.white,
-    ),
-    textTheme: buildTextTheme(),
-    appBarTheme: buildAppBarTheme(),
-    inputDecorationTheme: buildDarkInputDecorationTheme(),
-  );
+      colorScheme: const ColorScheme(
+        brightness: Brightness.dark,
+        primary: kPrimaryColor,
+        onPrimary: Colors.white,
+        background: Color(0xFF171719),
+        onBackground: Colors.white70,
+        secondary: kSecondaryColor,
+        onSecondary: Colors.pinkAccent,
+        error: Colors.red,
+        onError: Colors.redAccent,
+        surface: Colors.black,
+        onSurface: Colors.white,
+      ),
+      textTheme: buildTextTheme(),
+      appBarTheme: buildAppBarTheme(),
+      inputDecorationTheme: buildDarkInputDecorationTheme(),
+      );
 }
 
 TextTheme buildTextTheme() {
@@ -54,7 +54,7 @@ TextTheme buildTextTheme() {
     titleLarge: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 22)),
     titleMedium: GoogleFonts.lato(
-        textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
+        textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20)),
     titleSmall: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w400, fontSize: 18)),
     bodyLarge: GoogleFonts.lato(
@@ -62,10 +62,10 @@ TextTheme buildTextTheme() {
     bodyMedium: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
     bodySmall: GoogleFonts.lato(
-        textStyle: const TextStyle(
-            fontWeight: FontWeight.w400, fontSize: 15)),
+        textStyle: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15)),
     labelLarge: GoogleFonts.lato(
-        textStyle: const TextStyle(fontWeight: FontWeight.w300, fontSize: 15, height: 1.3)),
+        textStyle: const TextStyle(
+            fontWeight: FontWeight.w300, fontSize: 15, height: 1.3)),
     labelMedium: GoogleFonts.lato(
         textStyle: const TextStyle(fontWeight: FontWeight.w300, fontSize: 14)),
     labelSmall: GoogleFonts.lato(
@@ -88,7 +88,7 @@ AppBarTheme buildAppBarTheme() {
 InputDecorationTheme buildLightInputDecorationTheme() {
   var outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(color: Colors.black87,width: 1.5),
+    borderSide: const BorderSide(color: Colors.black87, width: 1.5),
   );
   return InputDecorationTheme(
     border: outlineInputBorder,
@@ -99,6 +99,7 @@ InputDecorationTheme buildLightInputDecorationTheme() {
         const EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 16),
   );
 }
+
 InputDecorationTheme buildDarkInputDecorationTheme() {
   var outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),

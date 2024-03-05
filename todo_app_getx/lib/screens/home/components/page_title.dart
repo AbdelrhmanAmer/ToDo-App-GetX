@@ -41,9 +41,8 @@ class _PageTitleState extends State<PageTitle> {
               return IconButton(
                 onPressed: () async{
                   themeController.switchTheme();
-                  log('Displaying notification');
-                  notifyHelper.displayNotification(title: 'Theme Switched', body: 'Notification Body',);
-                  notifyHelper.scheduleNotification();
+                  // notifyHelper.displayNotification(title: 'Theme Switched', body: 'Notification Body',);
+                  // notifyHelper.scheduleNotification();
                 },
                 icon: Icon(
                   themeController.theme == ThemeMode.dark
