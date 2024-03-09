@@ -89,22 +89,32 @@ class Description extends StatelessWidget {
             ),
           ),
           const SizedBox(height: kDefaultPadding),
-          SliderTheme(
-            
-            data: SliderTheme.of(context).copyWith(
-              trackHeight: 10,
-              thumbShape: SliderComponentShape.noThumb,
-            ),
-            child: Slider(
-              value: task.completionPercentage,
-              onChanged: (value) {
-            
-              },
-              max: 100,
-              activeColor: Colors.greenAccent,
-              inactiveColor: Theme.of(context).colorScheme.secondary,
-              
-            ),
+          
+          const SizedBox(height: kDefaultPadding),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 5,
+                child: SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                    trackHeight: 10,
+                  ),
+                  child: Slider(
+                    value: task.completionPercentage,
+                    onChanged: (value) {},
+                    max: 100,
+                    activeColor: Colors.greenAccent,
+                    inactiveColor: Theme.of(context).colorScheme.secondary,
+                  ),
+                ),
+              ),
+              Text(
+                '${task.completionPercentage}%',
+                style:
+                    TextStyle(color: Colors.white, fontSize: 20),
+              )
+            ],
           )
         ],
       ),
